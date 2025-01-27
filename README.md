@@ -1,7 +1,4 @@
-Here’s the updated `README.md` file with the `/insert` endpoint added to the **API Endpoints** section:
-
----
-
+ 
 # Hospital RAG System
 
 This project implements a Retrieval-Augmented Generation (RAG) system that processes an Excel sheet containing data for the Pain & Go hospital, including information on physicians, schedules, and pricelists. The system's role will be to answer user inquiries, such as the schedule of a specific doctor, the most appropriate doctor or specialty based on the question. It uses a Flask API, Streamlit UI, and SQLite database to answer user queries about doctor schedules.
