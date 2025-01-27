@@ -12,3 +12,9 @@ It uses a Flask API, Streamlit UI, and SQLite database to answer user queries ab
    ```bash
    git clone https://github.com/0Xuser100/AI-Powered-HIS-Customer-Services.git
    cd AI-Powered-HIS-Customer-Services
+   ```
+
+## Install dependencies
+```bash
+pip install -r requirements.txt
+```
