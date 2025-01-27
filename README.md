@@ -18,3 +18,13 @@ It uses a Flask API, Streamlit UI, and SQLite database to answer user queries ab
 ```bash
 pip install -r requirements.txt
 ```
+## Set up the database
+
+```bash
+python database.py
+```
+
+## Vectorize the data
+```bash
+python vectorization.py
+```
