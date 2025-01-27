@@ -117,7 +117,28 @@ To insert a new doctor's schedule, send a POST request to the `/insert` endpoint
 ---
 
 ## **Notes**
+Before running the application, ensure you have the following installed:
 
+**Ollama**: Download and run Ollama locally to use the Ollama LLM and embeddings.
+
+### Installing Ollama Locally
+
+To use Ollama, you need to download and run it on your local machine. Follow these steps:
+
+1. **Download Ollama**:
+   - Visit the [Ollama GitHub repository](https://github.com/ollama/ollama) and follow the installation instructions for your operating system.
+
+2. **Run Ollama**:
+   - After installation, start the Ollama server by running:
+     ```bash
+     ollama serve
+     ```
+   - This will start the Ollama server locally, which your Flask application will connect to.
+
+3. **Pull the Required Model**:
+   - Pull the model you want to use (e.g., `gemma2:2b`):
+     ```bash
+     ollama pull gemma2:2b
 - Ensure that the `hospital.db` database and the `Schedules` table exist before running the app. You can create the table using the following SQL command:
   ```sql
   CREATE TABLE Schedules (
