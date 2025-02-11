@@ -18,7 +18,7 @@ def vectorize_data():
     texts = text_splitter.split_text(text)
 
     # Use Ollama embeddings
-    embeddings = OllamaEmbeddings(model="gemma2:2b")  # Replace "gemma2:2b" with your preferred Ollama model
+    embeddings = OllamaEmbeddings(model="deepseek-r1:1.5b")  # Replace "gemma2:2b" with your preferred Ollama model
     vectorstore = FAISS.from_texts(texts, embeddings)
     vectorstore.save_local("faiss_index")
 
