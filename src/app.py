@@ -8,7 +8,7 @@ import sqlite3
 app = Flask(__name__)
 
 # Load FAISS vectorstore with Ollama embeddings
-embeddings = OllamaEmbeddings(model="gemma2:2b")  # Replace "gemma2:2b" with your preferred Ollama model
+embeddings = OllamaEmbeddings(model="deepseek-r1:1.5b")  # Replace "gemma2:2b" with your preferred Ollama model
 vectorstore = FAISS.load_local(
     "faiss_index", 
     embeddings, 
@@ -16,7 +16,7 @@ vectorstore = FAISS.load_local(
 )
 
 # Initialize Ollama LLM
-llm = OllamaLLM(model="gemma2:2b")  # Replace "gemma2:2b" with your preferred Ollama model
+llm = OllamaLLM(model="deepseek-r1:1.5b")  # Replace "gemma2:2b" with your preferred Ollama model
 
 # QA Chain
 qa_chain = RetrievalQA.from_chain_type(

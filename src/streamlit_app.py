@@ -10,11 +10,20 @@ query = st.text_input("Enter your query:")
 if st.button("Submit Query"):
     response = requests.post("http://localhost:5000/query", json={"query": query})
     if response.status_code == 200:
-        st.write("Response:", response.json()["answer"])
+        answer = response.json()["answer"]
+        
+        # Enhanced formatting logic
+        if "schedule" in query.lower():
+            formatted_answer = answer.replace(";", "\n\n").replace("not working", "\n**Days Off:**")
+            formatted_answer = formatted_answer.replace("works on", "**Working Days:**\n")
+        else:
+            formatted_answer = answer
+            
+        st.markdown(f"**Response:**\n\n{formatted_answer}")
     else:
-        st.write("Error:", response.json()["error"])
+        st.error(f"Error: {response.json()['error']}")
 
-# Form for inserting new records
+# Form for inserting new records (unchanged)
 st.header("Insert New Doctor Schedule")
 
 with st.form("insert_form"):
